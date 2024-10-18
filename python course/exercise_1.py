@@ -1,33 +1,35 @@
 list_operations=['+','-','*','/','%']
-def Calculator(symbol,input1,input2,):
-     if symbol=='+':
-        print('addition :',end=' ')
-        print(f"{input1} {symbol} {input2} = {input1+input2}")
+def sum(num1,num2):
+   return f"{num1} + {num2} = {num1+num2}" 
+ 
+def subtraction (num1,num2):
+   return f"{num1} - {num2} = {num1-num2}" 
 
-     elif symbol=='-':
-        print('subtraction :',end=' ')
-        print(f"{input1} {symbol} {input2} = {input1-input2}")
+def multiplication (num1,num2):
+   return f"{num1} * {num2} = {num1*num2}" 
 
-     elif symbol=='*':
-        print('multiplication :',end=' ')
-        print(f"{input1} {symbol} {input2} = {input1*input2}")
-
-     elif symbol=='/':
-        print('division :',end=' ')
-        print(f"{input1} {symbol} {input2} = {input1/input2}")
-     else :
-        print('modulus :',end=' ') 
-        print(f"{input1} {symbol} {input2} = {input1%input2}")
-        
+def divide (num1,num2):
+     return f"{num1} / {num2} = {num1/num2}" 
+  
+def mode (num1,num2):
+     return f"{num1} % {num2} = {num1%num2}" 
 Flag=True
-while Flag:
-     symbol,n1,n2=input('Entar the input for function Calculator : '.title()).split()
-     if symbol in list_operations:
-          Calculator(symbol,int(n1),int(n2))
+while Flag :
+   num1=float(input("enter the number 1 : ".title()))
+   num2=float(input('enter the number 2 :'.title()))
 
-
-     else:
+   choice=input('Enter the calculate operation : '.title())
+   if  choice in  list_operations:
+      if choice=='+':
+         print(sum(num1,num2))
+      elif choice=='-':
+         print(subtraction(num1,num2))
+      elif choice=='*':
+         print(multiplication(num1,num2))
+      elif choice=='/':
+         print(divide(num1,num2))
+      elif choice=='%':
+         print(divide(num1,num2))
+   else:
+      print('good by system Not found operation in list operation'.title())
       Flag=False
-      print('not found operations in math .'.title())
-if Flag==False:
-     print('Good by Calculator')
